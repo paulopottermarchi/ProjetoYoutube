@@ -1,93 +1,127 @@
-# Clone do YouTube - Projeto Educacional
+# YouTube Clone - Educational Project
 
-## Visão Geral
-Este é um projeto Java que simula um sistema básico similar ao YouTube, onde usuários (Gafanhotos) podem assistir vídeos e interagir com eles. O projeto demonstra conceitos de Programação Orientada a Objetos (POO) incluindo herança, interfaces e encapsulamento.
+## Overview
 
-## Estrutura do Projeto
+This is a **Java project** that simulates a basic system similar to YouTube, where users (called *Gafanhotos*) can watch and interact with videos. The project demonstrates core **Object-Oriented Programming (OOP)** concepts including inheritance, interfaces, and encapsulation.
+
+---
+
+## Project Structure
 
 ### Classes
-- **Video**: Implementa a funcionalidade do vídeo com recursos como play, pause e like
-- **Pessoa**: Classe abstrata base para tipos de usuários
-- **Gafanhoto**: Estende Pessoa, representa um espectador/usuário
-- **Visualizacao**: Gerencia a relação entre espectadores e vídeos
-- **AcoesVideo**: Interface que define as ações básicas do vídeo
 
-### Funcionalidades Principais
-- Gerenciamento de vídeos (play, pause, like)
-- Gerenciamento de usuários
-- Controle de visualizações
-- Sistema de avaliação
-- Sistema de pontos de experiência
+- **Video**: Implements video functionality including play, pause, and like.
+- **Pessoa (Person)**: Abstract base class for user types.
+- **Gafanhoto (Grasshopper)**: Extends `Pessoa`, represents a viewer/user.
+- **Visualizacao (View)**: Manages the relationship between users and videos.
+- **AcoesVideo (VideoActions)**: Interface that defines basic video actions.
 
-## Detalhes das Classes
+---
 
-### Video
-- Atributos:
-  - titulo
-  - avaliacao
-  - views
-  - curtidas
-  - reproduzindo
-- Métodos para controle de vídeo (play, pause, like)
+## Main Features
 
-### Pessoa (Abstrata)
-- Atributos base:
-  - nome
-  - idade
-  - sexo
-  - experiencia
-- Método abstrato para ganhar experiência
+- Video management (play, pause, like)
+- User management
+- View tracking system
+- Video rating system
+- Experience points system
 
-### Gafanhoto
-- Estende Pessoa com atributos adicionais:
-  - login
-  - totAssistido
-- Controla histórico de visualizações do usuário
+---
 
-### Visualizacao
-- Gerencia a relação de visualização entre usuários e vídeos
-- Possui diferentes métodos de avaliação:
-  - Avaliação padrão (escala de 5)
-  - Avaliação numérica
-  - Avaliação por porcentagem
+## Class Details
 
-## Exemplo de Uso
+### `Video`
+
+**Attributes:**
+- `titulo` (title)
+- `avaliacao` (rating)
+- `views` (view count)
+- `curtidas` (likes)
+- `reproduzindo` (isPlaying)
+
+**Methods:**
+- Control methods: `play()`, `pause()`, `like()`
+
+---
+
+### `Pessoa` (Abstract)
+
+**Base Attributes:**
+- `nome` (name)
+- `idade` (age)
+- `sexo` (gender)
+- `experiencia` (experience)
+
+**Abstract Method:**
+- `ganharExperiencia()` (gainExperience)
+
+---
+
+### `Gafanhoto`
+
+**Extends `Pessoa` with:**
+- `login`
+- `totAssistido` (total watched)
+
+**Features:**
+- Manages user's watch history
+
+---
+
+### `Visualizacao`
+
+- Manages viewing interactions between users and videos
+- Supports different evaluation methods:
+  - Default rating (5-star scale)
+  - Numeric rating
+  - Percentage-based rating
+
+---
+
+## Example Usage
+
 ```java
-// Criar vídeos
+// Create videos
 Video v[] = new Video[3];
-v[0] = new Video("Aula 1 de POO");
+v[0] = new Video("OOP Class 1");
 
-// Criar usuários
+// Create users
 Gafanhoto g[] = new Gafanhoto[2];
 g[0] = new Gafanhoto("Jubileu", 22, "M", "juba");
 
-// Criar e registrar visualizações
+// Create and record views
 Visualizacao vis[] = new Visualizacao[5];
 vis[0] = new Visualizacao(g[0], v[0]);
-vis[0].avaliar(); // Avaliar o vídeo
-```
+vis[0].avaliar(); // Rate the video
 
-## Sistema de Avaliação
-O sistema suporta três métodos de avaliação:
-1. Avaliação padrão (5 estrelas)
-2. Avaliação numérica (1-10)
-3. Avaliação por porcentagem:
-   - ≤20% = 3 estrelas
-   - ≤50% = 5 estrelas
-   - ≤90% = 8 estrelas
-   - >90% = 10 estrelas
 
-## Requisitos
-- Kit de Desenvolvimento Java (JDK)
-- IDE Java (Eclipse, NetBeans, IntelliJ IDEA)
+Rating System
+The project supports three evaluation methods:
 
-## Status do Projeto
-Este é um projeto demonstrativo para fins educacionais, apresentando conceitos de POO em Java.
+Default Rating: 5-star scale
 
-## Autor
-- Paulo
+Numeric Rating: 1 to 10
 
-## Observações
-- O projeto foi desenvolvido em português para facilitar o aprendizado
-- Projetado como uma ferramenta educacional para compreensão de conceitos de POO
-- Ideal para estudantes iniciando em programação orientada a objetos
+Percentage-Based Rating:
+
+≤ 20% → 3 stars
+
+≤ 50% → 5 stars
+
+≤ 90% → 8 stars
+
+90% → 10 stars
+
+Requirements
+Java Development Kit (JDK)
+
+Java IDE (Eclipse, NetBeans, IntelliJ IDEA, etc.)
+
+Project Status
+This is a demonstration project for educational purposes, showcasing OOP concepts in Java.
+
+Author
+Paulo
+
+## PS:
+-  The project was developed in portuguese 
